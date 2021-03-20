@@ -1,2 +1,10 @@
+
+
 class TttContaner:
-    pass
+    def __init__(self):
+        player_turn = ""
+
+
+    #plaats
+    #inhoud
+    #wie

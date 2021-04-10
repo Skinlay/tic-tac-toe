@@ -1,6 +1,6 @@
 
 
-class TttContaner:
+class TttContainer:
     player_turn = ""
     posities = []
 
@@ -11,9 +11,3 @@ class TttContaner:
             for y in range(3):
                 t.append(0)
             self.posities.append(t)
-
-
-
-    #plaats
-    #inhoud
-    #wie

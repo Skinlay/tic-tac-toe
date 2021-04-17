@@ -1,4 +1,5 @@
 import sys
+import os
 
 
 class TttView:
@@ -8,6 +9,7 @@ class TttView:
         self.turn = "x"
 
     def draw(self, out=sys.stdout):
+        os.system('clear')
         horizontal_separator = "\n---|---|---\n"
         txt1 = self.drawline(0)
         txt2 = self.drawline(1)

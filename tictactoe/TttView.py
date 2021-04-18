@@ -7,7 +7,13 @@ class TttView:
     def __init__(self):
         self.list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.turn = "x"
-        # self.antwoord = input()
+        self.rounds = 0
+
+    # def play(self):
+    #     while self.rounds < 4:
+    #         self.rounds = self.rounds + 1
+    #         self.draw()
+    #         self.placing_chois()
 
     def draw(self, out=sys.stdout):
         # os.system('clear')
@@ -27,8 +33,8 @@ class TttView:
         self.placing_chois()
 
     def drawline(self, ln):
-        n = ln*3
-        txt = " {} | {} | {} ".format(self.list[n], self.list[n+1], self.list[n+2])
+        n = ln * 3
+        txt = " {} | {} | {} ".format(self.list[n], self.list[n + 1], self.list[n + 2])
         return txt
 
     def which_turn(self, out=sys.stdout):
@@ -39,15 +45,25 @@ class TttView:
             sys.exit(1)
 
     def placing_chois(self):
+        print("round", self.rounds)
         self.antwood = input()
         for string in self.list:
             self.list = string.replace(self.antwood, self.turn)
             print(self.list)
 
+        self.draw()
+
+#         TODO: with python3 -m tictactoe make game loop
+#
+#         TODO: when second time through loop:
+#                   File "/home/caitlin/Projecten/tic-tac-toe/tictactoe/TttView.py", line 38, in drawline
+#                       txt = " {} | {} | {} ".format(self.list[n], self.list[n + 1], self.list[n + 2])
+#                   IndexError: string index out of range
+
 
 
 # if __name__ == '__main__':
-#     a = TttView
+#     a = TttView()
 #     a.play()
 
 #             list.index("")
@@ -58,3 +74,6 @@ class TttView:
 #     new_string = string.replace("a", "1")
 #
 #     new_strings.append(new_string)
+
+
+# txt = f" {self.list[n]} | {self.list[n + 1]} | {self.list[n + 2]} "

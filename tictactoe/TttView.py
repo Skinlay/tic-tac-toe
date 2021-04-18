@@ -5,11 +5,12 @@ import os
 class TttView:
 
     def __init__(self):
-        self.list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        self.list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.turn = "x"
+        # self.antwoord = input()
 
     def draw(self, out=sys.stdout):
-        os.system('clear')
+        # os.system('clear')
         horizontal_separator = "\n---|---|---\n"
         txt1 = self.drawline(0)
         txt2 = self.drawline(1)
@@ -23,6 +24,8 @@ class TttView:
         out.write("\n")
         out.write("")
 
+        self.placing_chois()
+
     def drawline(self, ln):
         n = ln*3
         txt = " {} | {} | {} ".format(self.list[n], self.list[n+1], self.list[n+2])
@@ -34,3 +37,24 @@ class TttView:
         else:
             out.write("turn no")
             sys.exit(1)
+
+    def placing_chois(self):
+        self.antwood = input()
+        for string in self.list:
+            self.list = string.replace(self.antwood, self.turn)
+            print(self.list)
+
+
+
+# if __name__ == '__main__':
+#     a = TttView
+#     a.play()
+
+#             list.index("")
+#             for
+#             string.replace("a", "1")
+
+# for string in strings:
+#     new_string = string.replace("a", "1")
+#
+#     new_strings.append(new_string)

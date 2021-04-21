@@ -29,6 +29,7 @@ class TttView:
         out.write(txt3)
         out.write("\n")
         out.write("")
+        print("befor", self.list)
 
         self.placing_chois()
 
@@ -44,12 +45,13 @@ class TttView:
             out.write("turn no")
             sys.exit(1)
 
-    def placing_chois(self):
+    def placing_chois(self, out=sys.stdout):
         print("round", self.rounds)
-        self.antwood = input()
-        for string in self.list:
-            self.list = string.replace(self.antwood, self.turn)
-            print(self.list)
+        self.antwood = int(input())
+        self.antwood = self.antwood - 1
+        self.list[self.antwood] = self.turn
+        print("after", self.list)
+            # out.write(self.list)
 
         self.draw()
 
@@ -59,6 +61,8 @@ class TttView:
 #                   File "/home/caitlin/Projecten/tic-tac-toe/tictactoe/TttView.py", line 38, in drawline
 #                       txt = " {} | {} | {} ".format(self.list[n], self.list[n + 1], self.list[n + 2])
 #                   IndexError: string index out of range
+
+# antword -1
 
 
 
@@ -77,3 +81,6 @@ class TttView:
 
 
 # txt = f" {self.list[n]} | {self.list[n + 1]} | {self.list[n + 2]} "
+#
+# for string in self.list:
+#     self.list = string.replace(self.antwood, self.turn)

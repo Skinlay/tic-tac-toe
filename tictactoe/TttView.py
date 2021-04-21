@@ -52,16 +52,20 @@ class TttView:
         self.list[self.antwood] = self.turn
         print("after", self.list)
             # out.write(self.list)
+        self.turn_draw()
 
+    def turn_draw(self):
+        if self.turn == "x":
+            self.turn = "o"
+        else:
+            self.turn = "x"
         self.draw()
 
-#         TODO: with python3 -m tictactoe make game loop
-#
-#         TODO: when second time through loop:
-#                   File "/home/caitlin/Projecten/tic-tac-toe/tictactoe/TttView.py", line 38, in drawline
-#                       txt = " {} | {} | {} ".format(self.list[n], self.list[n + 1], self.list[n + 2])
-#                   IndexError: string index out of range
 
+#         TODO: with python3 -m tictactoe make game loop
+#         Todo: game loop
+#           Todo: when it is a x or o cant be changed again
+#
 # antword -1
 
 

@@ -1,0 +1,16 @@
+ ik denk dat ik Tims uitleg niet snap omdat hij alles omzet/korter maakt, bijvoorbeeld: out=sys.stdout
+ op het internet staat het er voledig uit
+ dit maakt het voor mij onduidelijker omdat ik dacht dat dit standaard was
+ en het daarom raar vond dat ik geen overeenkomende voorbeelden kon vinden
+ handig om volgende keer dit niet dircet te doen
+
+ en miss moeten we eens comentaar er bij gaan zetten
+
+
+dit werkte ook allen werd het dan een string, maar hoe?
+ik snap het gedelten met string niet.
+# for string in self.list:
+#     self.list = string.replace(self.antwood, self.turn)
+
+python gaf dit zelf aan als een optie.
+# txt = f" {self.list[n]} | {self.list[n + 1]} | {self.list[n + 2]} "

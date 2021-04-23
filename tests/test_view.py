@@ -18,6 +18,21 @@ class TestTttView(unittest.TestCase):
         with self.assertRaises(SystemExit) as err:
             view.which_turn(out=local_out)
 
+    def test_replace_number_in_list(self):
+        view = TttView()
+        view.antwood = "1"
+        self.listtest = "['x', '2', '3', '4', '5', '6', '7', '8', '9']"
+        local_out = StringIO()
+        view.placing_chois(out=local_out)
+        self.assertEqual(local_out.getvalue(), self.listtest)
+
+#      this works but i wat to compare 2 lists instead of 2 strings
+#      problems i ran into:
+#      file TttView.py out.write wants a string not a list
+#      local_out is a list 
+
 
 if __name__ == "__main__":
     unittest.main(exit=False)
+
+#        self.assertListEqual(local_out.getvalue(), self.listtest)

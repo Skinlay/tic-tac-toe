@@ -8,6 +8,7 @@ class TttView:
         self.list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.turn = "x"
         self.rounds = 0
+        self.antwood = -1
 
     # def play(self):
     #     while self.rounds < 4:
@@ -47,11 +48,15 @@ class TttView:
 
     def placing_chois(self, out=sys.stdout):
         print("round", self.rounds)
+
         self.antwood = int(input())
         self.antwood = self.antwood - 1
+
         self.list[self.antwood] = self.turn
-        print("after", self.list)
-            # out.write(self.list)
+        out.write(str(self.list))
+        type(self.list)
+
+
         self.turn_draw()
 
     def turn_draw(self):
@@ -59,10 +64,10 @@ class TttView:
             self.turn = "o"
         else:
             self.turn = "x"
-        self.draw()
+        # self.draw()
 
 
-#         TODO: with python3 -m tictactoe make game loop
+#         TODO: with python3 -m tictactoe
 #         Todo: game loop
 #           Todo: when it is a x or o cant be changed again
 #
@@ -84,7 +89,6 @@ class TttView:
 #     new_strings.append(new_string)
 
 
-# txt = f" {self.list[n]} | {self.list[n + 1]} | {self.list[n + 2]} "
-#
-# for string in self.list:
-#     self.list = string.replace(self.antwood, self.turn)
+
+
+

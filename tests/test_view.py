@@ -22,11 +22,10 @@ class TestTttView(unittest.TestCase):
     # @patch('builtins.input', lambda *args: '5')
     def test_replace_number_in_list(self):
         view = TttView()
-
         self.listTest = "['x', '2', '3', '4', '5', '6', '7', '8', '9']"
         local_out = StringIO()
+        view.antwoord = 0
         view.placing_choice(out=local_out)
-
         self.assertEquals(local_out.getvalue(), self.listTest)
 
 #       this works but i wat to compare 2 lists instead of 2 strings

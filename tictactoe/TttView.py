@@ -8,7 +8,7 @@ class TttView:
         self.list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.turn = "x"
         self.rounds = 0
-        self.antwood = -1
+        self.antwoord = -1
 
     def play(self):
         while self.rounds < 4:
@@ -16,10 +16,10 @@ class TttView:
             self.draw()
             self.user_input()
             self.placing_choice()
-            self.turn_draw()
+            self.change_drawn_turn()
 
     def draw(self, out=sys.stdout):
-        # os.system('clear')
+        os.system('clear')
         horizontal_separator = "\n---|---|---\n"
         txt1 = self.drawline(0)
         txt2 = self.drawline(1)
@@ -32,7 +32,6 @@ class TttView:
         out.write(txt3)
         out.write("\n")
         out.write("")
-        # print("befor", self.list)
 
     def drawline(self, ln):
         n = ln * 3
@@ -47,37 +46,26 @@ class TttView:
             sys.exit(1)
 
     def user_input(self):
-        self.antwood = int(input()) - 1
+        self.antwoord = int(input()) - 1
 
     def placing_choice(self, out=sys.stdout):
-        # print("round", self.rounds)
-        self.list[self.antwood] = self.turn
+        print("round", self.rounds)
+        self.list[self.antwoord] = self.turn
         out.write(str(self.list))
 
     #     if user inputs 0 9 wil be changed
 
-    def turn_draw(self):
+    def change_drawn_turn(self):
         if self.turn == "x":
             self.turn = "o"
         else:
             self.turn = "x"
-        # self.draw()
 
     #         TODO: with python3 -m tictactoe
     #         Todo: game loop
     #           Todo: when it is a x or o cant be changed again
-    #
-    # antword -1
 
-# if __name__ == '__main__':
-#     a = TttView()
-#     a.play()
 
-#             list.index("")
-#             for
-#             string.replace("a", "1")
-
-# for string in strings:
-#     new_string = string.replace("a", "1")
-#
-#     new_strings.append(new_string)
+if __name__ == '__main__':
+    a = TttView()
+    a.play()

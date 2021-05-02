@@ -1,7 +1,6 @@
 import sys
 import os
 
-
 class TttView:
 
     def __init__(self):
@@ -30,9 +29,9 @@ class TttView:
         out.write(txt3)
         out.write("\n")
         out.write("")
-        print("befor", self.list)
+        # print("befor", self.list)
 
-        self.placing_chois()
+        self.user_input()
 
     def drawline(self, ln):
         n = ln * 3
@@ -46,18 +45,19 @@ class TttView:
             out.write("turn no")
             sys.exit(1)
 
+    def user_input(self):
+        self.antwood = int(input()) - 1
+
+        self.placing_chois()
+
     def placing_chois(self, out=sys.stdout):
-        print("round", self.rounds)
-
-        self.antwood = int(input())
-        self.antwood = self.antwood - 1
-
+        # print("round", self.rounds)
         self.list[self.antwood] = self.turn
         out.write(str(self.list))
-        type(self.list)
-
 
         self.turn_draw()
+
+    #     if user inputs 0 9 wil be changed
 
     def turn_draw(self):
         if self.turn == "x":

@@ -1,3 +1,6 @@
+ unittest starten in map tic-tac-toe voer uit "python3 -m unittest"
+ TttView uitvoeren in map tic-tac-toe voer uit "python3 -m tictactoe"
+
  ik denk dat ik Tims uitleg niet snap omdat hij alles omzet/korter maakt, bijvoorbeeld: out=sys.stdout
  op het internet staat het er voledig uit
  dit maakt het voor mij onduidelijker omdat ik dacht dat dit standaard was

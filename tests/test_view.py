@@ -29,7 +29,13 @@ class TestTttView(unittest.TestCase):
         # voer de functie uit die je wilt testen
         view.placing_choice()
         # vergelijkt twee lijsten om te kijken of het veranderd zo als verwacht
-        self.assertEquals(view.list, listtest)
+        self.assertListEqual(view.list, listtest)
+
+    @patch('builtins.input', lambda *args: '0')
+    def test_input_validation_0(self):
+        view = TttView()
+        view.user_input()
+        self.assertNotEqual(view.antwoord, -1)
 
 
 if __name__ == "__main__":

@@ -71,3 +71,6 @@ class TttView:
 if __name__ == '__main__':
     a = TttView()
     a.play()
+
+
+# commentaar waarom niet de wat

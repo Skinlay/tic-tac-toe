@@ -52,10 +52,8 @@ class TttView:
     def user_input(self) -> None:
         self.antwoord = int(input()) - 1
 
-    def placing_choice(self, out: StringIO = sys.stdout) -> None:
-        print("round", self.rounds)
+    def placing_choice(self) -> None:
         self.list[self.antwoord] = self.turn
-        out.write(str(self.list))
 
     #     if user inputs 0 9 wil be changed
 

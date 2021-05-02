@@ -19,25 +19,20 @@ class TestTttView(unittest.TestCase):
         with self.assertRaises(SystemExit) as err:
             view.which_turn(out=local_out)
 
-    # @patch('builtins.input', lambda *args: '5')
     def test_replace_number_in_list(self):
+        # maak een nieuw TttView aan
         view = TttView()
-        self.listTest = "['x', '2', '3', '4', '5', '6', '7', '8', '9']"
-        local_out = StringIO()
+        # het reseltaat dat ik verwacht
+        listtest = ["x", "2", "3", "4", "5", "6", "7", "8", "9"]
+        # simuleer een ingevoerd antwoord met een vaste waarde
         view.antwoord = 0
-        view.placing_choice(out=local_out)
-        self.assertEquals(local_out.getvalue(), self.listTest)
-
-#       this works but i wat to compare 2 lists instead of 2 strings
-#       problems i ran into:
-#           -file TttView.py out.write wants a string not a list
-#           -local_out is a list but wants a string
-# @patch('builtins.input', lambda *args: '10')
-#
+        # voer de functie uit die je wilt testen
+        view.placing_choice()
+        # vergelijkt twee lijsten om te kijken of het veranderd zo als verwacht
+        self.assertEquals(view.list, listtest)
 
 
 if __name__ == "__main__":
     unittest.main(exit=False)
 
-#       compares 2 list but does not work
-#        self.assertListEqual(local_out.getvalue(), self.listtest)
+#       @patch('builtins.input', lambda *args: '10')

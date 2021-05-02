@@ -33,10 +33,30 @@ class TestTttView(unittest.TestCase):
 
     @patch('builtins.input', lambda *args: '0')
     def test_input_validation_0(self):
+        # maak een vers nieuw object
         view = TttView()
+        # vraag user input om te zien of ons antwoord geaccepteerd wordt
         view.user_input()
+        # controleer of ons antwoord inderdaad niet geaccepteerd wordt
         self.assertNotEqual(view.antwoord, -1)
 
+    @patch('builtins.input', lambda *args: 'a')
+    def test_input_validation_a(self):
+        # maak een vers nieuw object
+        view = TttView()
+        # vraag user input om te zien of ons antwoord geaccepteerd wordt
+        view.user_input()
+        # controleer of ons antwoord inderdaad niet geaccepteerd wordt
+        self.assertNotEqual(view.antwoord, 'a')
+
+    @patch('builtins.input', lambda *args: '10')
+    def test_input_validation_a(self):
+        # maak een vers nieuw object
+        view = TttView()
+        # vraag user input om te zien of ons antwoord geaccepteerd wordt
+        view.user_input()
+        # controleer of ons antwoord inderdaad niet geaccepteerd wordt
+        self.assertNotEqual(view.antwoord, 9)
 
 if __name__ == "__main__":
     unittest.main(exit=False)

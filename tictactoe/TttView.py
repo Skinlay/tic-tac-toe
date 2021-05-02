@@ -8,7 +8,8 @@ class TttView:
         self.list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.turn = "x"
         self.rounds = 0
-        self.antwoord = -1
+        # zet de standaard waarde heel ver buiten de range
+        self.antwoord = -100
 
     def play(self) -> None:
         """Start playing the game."""

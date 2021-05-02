@@ -25,7 +25,7 @@ class TestTttView(unittest.TestCase):
 
         self.listTest = "['x', '2', '3', '4', '5', '6', '7', '8', '9']"
         local_out = StringIO()
-        view.placing_chois(out=local_out)
+        view.placing_choice(out=local_out)
 
         self.assertEquals(local_out.getvalue(), self.listTest)
 

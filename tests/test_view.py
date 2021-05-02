@@ -12,7 +12,7 @@ class TestTttView(unittest.TestCase):
         self.assertEqual(local_out.getvalue(),
                          " 1 | 2 | 3 \n---|---|---\n 4 | 5 | 6 \n---|---|---\n 7 | 8 | 9 \n")
 
-    def test_turn_incorect(self):
+    def test_turn_incorrect(self):
         view = TttView()
         view.turn = "N"
         local_out = StringIO()

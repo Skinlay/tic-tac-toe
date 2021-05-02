@@ -50,7 +50,7 @@ class TestTttView(unittest.TestCase):
         self.assertNotEqual(view.antwoord, 'a')
 
     @patch('builtins.input', lambda *args: '10')
-    def test_input_validation_a(self):
+    def test_input_validation_10(self):
         # maak een vers nieuw object
         view = TttView()
         # vraag user input om te zien of ons antwoord geaccepteerd wordt

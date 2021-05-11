@@ -53,7 +53,15 @@ class TttView:
             sys.exit(1)
 
     def user_input(self) -> None:
+        # get user input and substrexts 1 so it is gelijk met de lijst
         self.antwoord = int(input()) - 1
+        # checks if user input is in range
+        # if this is not check the user can give numbers like 0 or -1
+        if self.antwoord not in range(0, 9):
+            print("that is not in range of 1-9")
+            # go beck to the beginning of the function so the user can give in a valid answer
+            self.user_input()
+            #     allen deze verandere HW
 
     def placing_choice(self) -> None:
         self.list[self.antwoord] = self.turn
@@ -65,6 +73,7 @@ class TttView:
             self.turn = "x"
 
     #           TODO: with python3 -m tictactoe
+
     #           TODO: when it is a x or o cant be changed again
     #           TODO: if user inputs 0 9 wil be changed
 

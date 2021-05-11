@@ -58,6 +58,7 @@ class TestTttView(unittest.TestCase):
         # controleer of ons antwoord inderdaad niet geaccepteerd wordt
         self.assertNotEqual(view.antwoord, 9)
 
+
 if __name__ == "__main__":
     unittest.main(exit=False)
 

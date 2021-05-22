@@ -55,13 +55,14 @@ class TttView:
             out.write("turn no")
             sys.exit(1)
 
-    def user_input(self) -> bool:
+    def user_input(self, print_error: bool = True) -> bool:
         # get user input and substrexts 1 so it is gelijk met de lijst
         self.antwoord = int(input()) - 1
         # checks if user input is in range
         # if this is not check the user can give numbers like 0 or -1
         if self.antwoord not in range(0, 9):
-            print("that is not in range of 1-9")
+            if print_error:
+                print("that is not in range of 1-9")
             return False
         else:
             return True

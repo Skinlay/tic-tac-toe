@@ -36,7 +36,7 @@ class TestTttView(unittest.TestCase):
         # maak een vers nieuw object
         view = TttView()
         # vraag user input om te zien of ons antwoord geaccepteerd wordt
-        view.user_input()
+        view.user_input(print_error=False)
         # controleer of ons antwoord inderdaad niet geaccepteerd wordt
         self.assertNotEqual(view.antwoord, -1)
 
@@ -45,7 +45,7 @@ class TestTttView(unittest.TestCase):
         # maak een vers nieuw object
         view = TttView()
         # vraag user input om te zien of ons antwoord geaccepteerd wordt
-        view.user_input()
+        view.user_input(print_error=False)
         # controleer of ons antwoord inderdaad niet geaccepteerd wordt
         self.assertNotEqual(view.antwoord, 'a')
 
@@ -54,7 +54,7 @@ class TestTttView(unittest.TestCase):
         # maak een vers nieuw object
         view = TttView()
         # vraag user input om te zien of ons antwoord geaccepteerd wordt
-        view.user_input()
+        view.user_input(print_error=False)
         # controleer of ons antwoord inderdaad niet geaccepteerd wordt
         self.assertNotEqual(view.antwoord, 9)
 

@@ -15,9 +15,11 @@ class TttView:
         """Start playing the game."""
         while self.rounds < 10:
             self.rounds = self.rounds + 1
-            # needs to be on Fals for testing
+            # needs to be on False for testing
             self.draw(clearscreen=True)
-            self.user_input()
+            foo = False
+            while not foo:
+                foo = self.user_input()
             self.placing_choice()
             self.change_drawn_turn()
 
@@ -53,16 +55,16 @@ class TttView:
             out.write("turn no")
             sys.exit(1)
 
-    def user_input(self) -> None:
+    def user_input(self) -> bool:
         # get user input and substrexts 1 so it is gelijk met de lijst
         self.antwoord = int(input()) - 1
         # checks if user input is in range
         # if this is not check the user can give numbers like 0 or -1
         if self.antwoord not in range(0, 9):
             print("that is not in range of 1-9")
-            # go beck to the beginning of the function so the user can give in a valid answer
-            self.user_input()
-            #     allen deze verandere HW
+            return False
+        else:
+            return True
 
     def placing_choice(self) -> None:
         # in list change the given answer into the current turn (x or o)
@@ -85,6 +87,5 @@ class TttView:
 if __name__ == '__main__':
     a = TttView()
     a.play()
-
 
 # commentaar waarom niet de wat

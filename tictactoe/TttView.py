@@ -15,6 +15,7 @@ class TttView:
         """Start playing the game."""
         while self.rounds < 10:
             self.rounds = self.rounds + 1
+            # needs to be on Fals for testing
             self.draw(clearscreen=True)
             self.user_input()
             self.placing_choice()
@@ -64,9 +65,12 @@ class TttView:
             #     allen deze verandere HW
 
     def placing_choice(self) -> None:
+        # in list change the given answer into the current turn (x or o)
+        # this wil change the list and it wil be drawn onto the bord next loop
         self.list[self.antwoord] = self.turn
 
     def change_drawn_turn(self) -> None:
+        # changing turn so you now who placed
         if self.turn == "x":
             self.turn = "o"
         else:

@@ -10,6 +10,7 @@ class TttView:
         self.rounds = 0
         # zet de standaard waarde heel ver buiten de range
         self.antwoord = -100
+        self.antwoordlist = []
 
     def play(self) -> None:
         """Start playing the game."""
@@ -55,7 +56,7 @@ class TttView:
             out.write("turn no")
             sys.exit(1)
 
-    def user_input(self, print_error: bool = True) -> bool:
+    def user_input(self, out: StringIO = sys.stdout, print_error: bool = True) -> bool:
         # get user input and substrexts 1 so it is gelijk met de lijst
         self.antwoord = int(input()) - 1
         # checks if user input is in range
@@ -65,7 +66,15 @@ class TttView:
                 print("that is not in range of 1-9")
             return False
         else:
-            return True
+            # checks if given answer hasn't already bin given
+            if self.antwoord in self.antwoordlist:
+                if print_error:
+                    print("is already in use")
+                return False
+            else:
+                # saves given answer
+                self.antwoordlist.append(self.antwoord)
+                return True
 
     def placing_choice(self) -> None:
         # in list change the given answer into the current turn (x or o)
@@ -79,14 +88,18 @@ class TttView:
         else:
             self.turn = "x"
 
+    def occupied(self) -> None:
+        pass
+
+    #           TODO: ~/PycharmProjects/tic-tac-toe
     #           TODO: with python3 -m tictactoe
 
-    #           TODO: when it is a x or o cant be changed again
-    #           TODO: if user inputs 0 9 wil be changed
+
+
 
 
 if __name__ == '__main__':
     a = TttView()
     a.play()
 
-# commentaar waarom niet de wat
+# commentaar waarom, niet de wat

@@ -10,7 +10,9 @@ class TttView:
         self.rounds = 0
         # zet de standaard waarde heel ver buiten de range
         self.antwoord = -100
-        self.antwoordlist = []
+        self.xAntwoordList = []
+        self.oAntwoordList = []
+        self.test = 4
 
     def play(self) -> None:
         """Start playing the game."""
@@ -28,8 +30,8 @@ class TttView:
         """
         Draw the board on the out variable.
         """
-        if clearscreen:
-            os.system('clear')
+        # if clearscreen:
+        #     os.system('clear')
 
         horizontal_separator = "\n---|---|---\n"
         txt1 = self.drawline(0)
@@ -66,20 +68,41 @@ class TttView:
                 print("that is not in range of 1-9")
             return False
         else:
+            # TODO: Make one if
             # checks if given answer hasn't already bin given
-            if self.antwoord in self.antwoordlist:
+            if self.antwoord in self.xAntwoordList:
                 if print_error:
                     print("is already in use")
                 return False
+            elif self.antwoord in self.oAntwoordList:
+                if print_error:
+                    print("is already in use")
+                return False
+            # saves given answer in correct list of the payer
             else:
-                # saves given answer
-                self.antwoordlist.append(self.antwoord)
-                return True
+                if self.turn == "x":
+                    self.xAntwoordList.append(self.antwoord)
+                    print(self.xAntwoordList, self.oAntwoordList)
+                    return True
+                else:
+                    self.oAntwoordList.append(self.antwoord)
+                    print(self.xAntwoordList, self.oAntwoordList)
+                    return True
 
     def placing_choice(self) -> None:
         # in list change the given answer into the current turn (x or o)
         # this wil change the list and it wil be drawn onto the bord next loop
         self.list[self.antwoord] = self.turn
+
+    # TODO: donsnt work and dont know why, looks like functin is being skipt
+    def player_won(self) -> None:
+        if self.turn == "x":
+            for self.xAntwoordList in y:
+                if y == [1]:
+                    print("geliciteerd")
+        else:
+            print("PANIEK")
+            return True
 
     def change_drawn_turn(self) -> None:
         # changing turn so you now who placed
@@ -94,8 +117,7 @@ class TttView:
     #           TODO: ~/PycharmProjects/tic-tac-toe
     #           TODO: with python3 -m tictactoe
 
-
-
+    #           TODO: if a win
 
 
 if __name__ == '__main__':

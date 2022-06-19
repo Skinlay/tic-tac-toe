@@ -12,7 +12,7 @@ class TttView:
         self.antwoord = -100
         self.xAntwoordList = []
         self.oAntwoordList = []
-        self.test = ["1"]
+        self.test = (3, 4, 5)
 
     def play(self) -> None:
         """Start playing the game."""
@@ -23,6 +23,7 @@ class TttView:
             foo = False
             while not foo:
                 foo = self.user_input()
+            self.player_won
             self.placing_choice()
             self.change_drawn_turn()
 
@@ -94,15 +95,24 @@ class TttView:
         # this wil change the list and it wil be drawn onto the bord next loop
         self.list[self.antwoord] = self.turn
 
-    # TODO: donsnt work and dont know why, looks like function is being skipt
+
     # TODO: check if numbers are in the list
+    @property
     def player_won(self) -> None:
         if self.turn == "x":
-            if self.xAntwoordList in self.test:
-                print("geliciteerd")
+            if all(self.test) in self.xAntwoordList:
+                print("congratulations")
+                return True
         else:
             print("PANIEK")
             return True
+
+    #if 0 in self.xAntwoordList:
+    #if all(self.test) in self.xAntwoordList:
+
+# if any(s in line for s in ('string1', 'string2', ...)):
+# all([predicate(item) for item in iterable])
+
 
     def change_drawn_turn(self) -> None:
         # changing turn so you now who placed

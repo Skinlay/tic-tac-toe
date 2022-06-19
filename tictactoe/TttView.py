@@ -12,7 +12,7 @@ class TttView:
         self.antwoord = -100
         self.xAntwoordList = []
         self.oAntwoordList = []
-        self.test = 4
+        self.test = ["1"]
 
     def play(self) -> None:
         """Start playing the game."""
@@ -94,12 +94,12 @@ class TttView:
         # this wil change the list and it wil be drawn onto the bord next loop
         self.list[self.antwoord] = self.turn
 
-    # TODO: donsnt work and dont know why, looks like functin is being skipt
+    # TODO: donsnt work and dont know why, looks like function is being skipt
+    # TODO: check if numbers are in the list
     def player_won(self) -> None:
         if self.turn == "x":
-            for self.xAntwoordList in y:
-                if y == [1]:
-                    print("geliciteerd")
+            if self.xAntwoordList in self.test:
+                print("geliciteerd")
         else:
             print("PANIEK")
             return True
@@ -125,3 +125,5 @@ if __name__ == '__main__':
     a.play()
 
 # commentaar waarom, niet de wat
+
+# if y == [1]:
